@@ -1,0 +1,88 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: 'public/uploads'
+public_folder: '/uploads'
+
+collections:
+  # =========================================================================
+  # 1. SERVICES COLLECTION
+  # =========================================================================
+  - name: 'services'
+    label: 'Services Directory'
+    folder: 'data/content/services'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Service Name', name: 'name', widget: 'string' }
+      - { label: 'URL Slug', name: 'slug', widget: 'string' }
+      - {
+          label: 'Category',
+          name: 'category',
+          widget: 'select',
+          options: [
+            'Music Distribution & Promotion',
+            'Music Production & Audio Engineering',
+            'Music Videos & Visual Production',
+            'Artist Branding & Graphic Design',
+            'Artist Development & Digital Presence',
+            'Website Development & Digital Technology'
+          ]
+        }
+      - { label: 'Short Summary', name: 'short', widget: 'string' }
+      - { label: 'Introduction Lead', name: 'intro', widget: 'text' }
+      - { label: 'Detailed Overview', name: 'overview', widget: 'markdown' }
+      - { label: 'Key Benefits', name: 'benefits', widget: 'list' }
+      - { label: 'Deliverables', name: 'deliverables', widget: 'list' }
+      - { label: 'Working Process Steps', name: 'process', widget: 'list' }
+      - { label: 'Sample Title', name: 'sampleTitle', widget: 'string' }
+      - { label: 'Sample Description', name: 'sampleDesc', widget: 'text' }
+
+  # =========================================================================
+  # 2. PORTFOLIO ARTWORKS
+  # =========================================================================
+  - name: 'artwork'
+    label: 'Cover Artworks'
+    folder: 'data/content/artwork'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Artwork Title', name: 'title', widget: 'string' }
+      - { label: 'Artist Name', name: 'artist', widget: 'string' }
+      - { label: 'Design Style / Genre', name: 'style', widget: 'string' }
+      - { label: 'Artwork Image', name: 'image', widget: 'image' }
+      - { label: 'Creative Concept', name: 'concept', widget: 'text' }
+      - { label: 'Deliverables Included', name: 'deliverables', widget: 'list' }
+
+  # =========================================================================
+  # 3. TEAM MEMBERS
+  # =========================================================================
+  - name: 'team'
+    label: 'Team Members'
+    folder: 'data/content/team'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Full Name', name: 'name', widget: 'string' }
+      - { label: 'Position / Role', name: 'role', widget: 'string' }
+      - { label: 'Department', name: 'department', widget: 'string' }
+      - { label: 'Profile Photo', name: 'image', widget: 'image' }
+      - { label: 'Professional Biography', name: 'bio', widget: 'text' }
+      - { label: 'Credentials & Responsibilities', name: 'credentials', widget: 'list' }
+
+  # =========================================================================
+  # 4. CLIENT TESTIMONIALS
+  # =========================================================================
+  - name: 'testimonials'
+    label: 'Client Testimonials'
+    folder: 'data/content/testimonials'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Client / Artist Name', name: 'clientName', widget: 'string' }
+      - { label: 'Role / Title', name: 'role', widget: 'string' }
+      - { label: 'Location', name: 'location', widget: 'string' }
+      - { label: 'Service Engaged', name: 'serviceEngaged', widget: 'string' }
+      - { label: 'Quote', name: 'quote', widget: 'text' }
+      - { label: 'Verified Outcome', name: 'verifiedOutcome', widget: 'string' }
